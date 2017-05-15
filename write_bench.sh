@@ -138,7 +138,7 @@ echo
   --open_files=-1 \
   --block_size=4096 \
   --use_direct_io_for_flush_and_compaction=true \
-  --compaction_pri=kMinOverlappingRatio \
+  --compaction_pri=3 \ # kMinOverlappingRatio
   --write_buffer_size=$write_buffer_size --max_write_buffer_number=$max_write_buffer_number --min_write_buffer_number_to_merge=$min_write_buffer_number_to_merge \
   --level0_file_num_compaction_trigger=$level0_file_num_compaction_trigger \
   --max_bytes_for_level_base=$max_bytes_for_level_base --max_bytes_for_level_multiplier=8 \
