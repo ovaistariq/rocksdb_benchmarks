@@ -30,7 +30,7 @@ RocksDB can be built by following the command below
 apt-get install libjemalloc-dev
 git clone https://github.com/facebook/rocksdb.git
 cd rocksdb
-git checkout v5.3.4
+git checkout 5.4.fb
 JEMALLOC=1 make release
 ```
 
@@ -41,35 +41,35 @@ The example below assume that you want to restrict the memory used by memtables 
 
 #### 1 RocksDB and 1 Column Family
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=134217728 --max_write_buffer_number=16 --min_write_buffer_number_to_merge=2 --num_column_families=1 --num_multi_db=0 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=134217728 --max_write_buffer_number=16 --min_write_buffer_number_to_merge=1 --num_column_families=1 --num_multi_db=0 --duration_secs=3600
 ```
 
 #### 1 RocksDB and 32 Column Families
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=16777216 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=32 --num_multi_db=0 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=16777216 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=32 --num_multi_db=0 --duration_secs=3600
 ```
 
 #### 1 RocksDB and 128 Column Families
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=4194304 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=128 --num_multi_db=0 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=4194304 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=128 --num_multi_db=0 --duration_secs=3600
 ```
 
 #### 1 RocksDB and 1024 Column Families
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=524288 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=1024 --num_multi_db=0 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=524288 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=1024 --num_multi_db=0 --duration_secs=3600
 ```
 
 #### 32 RocksDB and 1 Column Family
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=16777216 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=1 --num_multi_db=32 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=16777216 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=1 --num_multi_db=32 --duration_secs=3600
 ```
 
 #### 128 RocksDB and 1 Column Family
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=4194304 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=1 --num_multi_db=128 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=4194304 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=1 --num_multi_db=128 --duration_secs=3600
 ```
 
 #### 1024 RocksDB and 1 Column Family
 ```bash
-./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=524288 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=4 --num_column_families=1 --num_multi_db=1024 --duration_secs=3600
+./write_bench.sh --threads=16 --db_dir=/var/lib/rocksdb --sync=1 --concurrent_mem_table_writes=1  --key_size=64 --value_size=1024 --write_buffer_size=524288 --max_write_buffer_number=4 --min_write_buffer_number_to_merge=1 --num_column_families=1 --num_multi_db=1024 --duration_secs=3600
 ```
