@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPTS=`getopt -o D:t:s:w:c:d:k:v:s:b:n:m:h --long db_dir:,threads:,sync:,concurrent_mem_table_writes:,num_column_families:,num_multi_db:,key_size:,value_size:,duration_secs:,write_buffer_size:,max_write_buffer_number:,min_write_buffer_number_to_merge:,help -n 'rocksdb-bench.sh' -- "$@"`
+OPTS=`getopt -o D:t:s:w:c:d:k:v:s:b:n:m:h --long db_dir:,threads:,sync:,concurrent_mem_table_writes:,num_column_families:,num_multi_db:,key_size:,value_size:,duration_secs:,write_buffer_size:,max_write_buffer_number:,min_write_buffer_number_to_merge:,help -n 'write_bench.sh' -- "$@"`
 
 print_help()
 {
